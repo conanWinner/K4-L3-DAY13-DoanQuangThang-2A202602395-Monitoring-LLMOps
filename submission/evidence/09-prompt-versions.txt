@@ -1,0 +1,3 @@
+Langfuse Prompt Management API
+1 | baseline, production | text | day13-chat
+2 | candidate, latest | text | day13-chat

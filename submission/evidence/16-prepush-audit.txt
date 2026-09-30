@@ -1,0 +1,12 @@
+CP4 pre-push staged-tree audit
+UTC: 2026-09-30T04:41:31+00:00
+Scope: git index (all staged and existing tracked files)
+git diff --cached --check: PASS
+Forbidden or ignored paths staged: 0
+Secret signature hits: 0 (private keys, Langfuse/OpenAI/GitHub/AWS keys, long key assignments)
+PII in report/evidence text (app.pii.scrub_text): 0
+Official challenge message/session/user values in staged text: 0
+Report evidence links present in index: 27/27
+Valid PNG evidence: 9
+Local config/challenge.json, .env, logs and raw CP3 log evidence are not staged.
+Final index recheck after linking this audit: 28/28 evidence links; 9 valid PNG; 0 forbidden paths, secrets, PII or challenge query fields.

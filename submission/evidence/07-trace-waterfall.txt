@@ -1,0 +1,4 @@
+Trace 197f92fc2d3a2243fab8c00d6653018b · req-9d4c92c6
+generation parent=7dadfe6ee48e557f latency_s=0.15
+retrieval parent=7dadfe6ee48e557f latency_s=2.5
+lab-agent-run parent=None latency_s=2.652

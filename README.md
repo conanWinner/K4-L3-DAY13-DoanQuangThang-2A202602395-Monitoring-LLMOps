@@ -134,6 +134,8 @@ Chạy API ở terminal thứ nhất:
 uvicorn app.main:app --reload --env-file .env
 ```
 
+Dashboard local đọc trực tiếp `data/logs.jsonl` tại `http://127.0.0.1:8000/dashboard` và tự cập nhật mỗi 30 giây.
+
 Chạy baseline ở terminal thứ hai:
 
 ```bash

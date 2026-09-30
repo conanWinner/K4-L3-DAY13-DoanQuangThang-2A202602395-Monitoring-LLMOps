@@ -1,0 +1,34 @@
+Challenge ID: day13-k4-l3b-monitoring-llmops-v1
+Cohort: K4
+Seed: 1312
+Queries: 5
+Affected feature: monitoring
+Latency threshold: 2000 ms
+No raw challenge queries are recorded.
+baseline_start_utc: 2026-09-30T04:22:05.235+00:00
+
+baseline_without_incident
+Challenge: day13-k4-l3b-monitoring-llmops-v1 | Cohort: K4
+[200] req-011b53a9 | monitoring | 1840.8ms
+[200] req-f8b2248a | monitoring | 1842.2ms
+[200] req-a01cd0ec | monitoring | 1843.8ms
+[200] req-764ff754 | monitoring | 1840.6ms
+[200] req-3bd6a4ef | monitoring | 1842.4ms
+baseline_end_utc: 2026-09-30T04:22:07.330+00:00
+
+incident_enable
+200 {'ok': True, 'incidents': {'rag_slow': True, 'tool_fail': False, 'cost_spike': False}}
+incident_start_utc: 2026-09-30T04:22:07.596+00:00
+
+incident_workload
+Challenge: day13-k4-l3b-monitoring-llmops-v1 | Cohort: K4
+[200] req-6d5f7eaf | monitoring | 13288.2ms
+[200] req-bbed1c45 | monitoring | 13288.4ms
+[200] req-48f8cc41 | monitoring | 13287.4ms
+[200] req-5a00f2d3 | monitoring | 13289.3ms
+[200] req-a18fe606 | monitoring | 13291.2ms
+incident_end_utc: 2026-09-30T04:22:21.156+00:00
+
+incident_disable
+200 {'ok': True, 'incidents': {'rag_slow': False, 'tool_fail': False, 'cost_spike': False}}
+health_after: {"incidents": {"cost_spike": false, "rag_slow": false, "tool_fail": false}, "ok": true, "tracing_enabled": true}

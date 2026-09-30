@@ -1,0 +1,2 @@
+data/logs.jsonl:98 (selected fields)
+{"ts": "2026-09-30T04:22:10.424427Z", "level": "info", "event": "response_sent", "correlation_id": "req-6d5f7eaf", "feature": "monitoring", "model": "claude-sonnet-4-5", "env": "dev", "latency_ms": 2651, "ttft_ms": 50, "tool_name": "retrieval", "tool_success": true, "tokens_in": 36, "tokens_out": 125, "cost_usd": 0.001983}

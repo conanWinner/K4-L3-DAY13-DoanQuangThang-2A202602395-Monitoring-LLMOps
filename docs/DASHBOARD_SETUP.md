@@ -4,7 +4,7 @@
 
 Trường `query` trong YAML là pseudocode mô tả phép tính, không phải câu lệnh để copy nguyên vào mọi công cụ. Bạn chuyển cùng logic đó sang cú pháp của công cụ đã chọn.
 
-Lab không bắt buộc một công cụ dashboard cụ thể. Bạn có thể dùng Streamlit, notebook, Grafana, script local tạo biểu đồ hoặc công cụ tương đương. Điều quan trọng khi chấm là dashboard runtime có dữ liệu thật từ `data/logs.jsonl`, đủ sáu panel, đọc được time range/đơn vị/threshold và khớp logic trong `config/dashboard.yaml`.
+Lab không bắt buộc một công cụ dashboard cụ thể. Repo này dựng dashboard tại `http://127.0.0.1:8000/dashboard` khi API đang chạy. Trang đọc `data/logs.jsonl` mỗi lần tải, tự cập nhật sau 30 giây và hiện đúng sáu panel. Điều quan trọng khi chấm là dashboard runtime có dữ liệu thật từ log, đủ sáu panel, đọc được time range/đơn vị/threshold và khớp logic trong `config/dashboard.yaml`.
 
 ## Mapping dữ liệu
 
@@ -23,7 +23,7 @@ Giữ time range mặc định 60 phút, refresh 30 giây và hiển thị thres
 
 1. Hoàn thiện logging/PII và chạy API.
 2. Chạy `python scripts/load_test.py --concurrency 5` để tạo baseline.
-3. Dùng `data/logs.jsonl` làm nguồn chuẩn để tạo đúng sáu panel bằng Streamlit, notebook, Grafana hoặc công cụ tương đương. Langfuse vẫn là nơi mở trace/prompt version để điều tra sâu.
+3. Mở `/dashboard` để xem sáu panel lấy từ `data/logs.jsonl`. Langfuse vẫn là nơi mở trace/prompt version để điều tra sâu.
 4. Đặt tên panel, đơn vị và threshold giống contract.
 5. Chạy validator:
 

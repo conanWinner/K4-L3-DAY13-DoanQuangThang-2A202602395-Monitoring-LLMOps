@@ -1,0 +1,9 @@
+Langfuse Public API v2
+Trace ID | 4b6e95a6ad3058b59941f0ebb49a4d8e
+Correlation ID | req-8a0489ea
+Parent observation | 9d41a099fe473c28
+Model | claude-sonnet-4-5
+Prompt | day13-chat · production · v2
+Tokens | input 49 · output 116
+Chi phí | USD 0.001887
+TTFT | 50 ms

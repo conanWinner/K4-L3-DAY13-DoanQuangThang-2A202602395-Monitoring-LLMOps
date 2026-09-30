@@ -1,0 +1,3 @@
+$ .venv/bin/python -m pytest -q
+.........................                                                [100%]
+25 passed in 1.41s

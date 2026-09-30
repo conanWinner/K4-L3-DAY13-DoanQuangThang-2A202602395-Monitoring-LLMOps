@@ -1,0 +1,6 @@
+PII giả trong workload CP1; các preview dưới đây lấy từ data/logs.jsonl:
+email: {"correlation_id": "req-cba097cd", "message_preview": "What is your refund policy? My email is [REDACTED_EMAIL]"}
+phone_vn: {"correlation_id": "req-153107fd", "message_preview": "Here is my phone [REDACTED_PHONE_VN], what should be logged?"}
+credit_card: {"correlation_id": "req-a35c2de8", "message_preview": "What is the policy for PII and credit card [REDACTED_CREDIT_CARD]?"}
+cccd: {"correlation_id": "req-deadbeef", "message_preview": "Check sample CCCD [REDACTED_CCCD] and card [REDACTED_CREDIT_CARD] in monitoring ..."}
+validate_logs.py: Potential PII leaks detected: 0

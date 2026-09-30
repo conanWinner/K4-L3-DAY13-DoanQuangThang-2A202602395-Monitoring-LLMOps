@@ -1,0 +1,4 @@
+Langfuse API + trace history
+Trước rollback | production → v2 | 4b6e95a6ad3058b59941f0ebb49a4d8e | req-8a0489ea
+Sau rollback | production → v1 | e2935857263d76f119e6e65a9d6d8cfd | req-243cb89e
+Hiện tại | production → v1 | API get_prompt | verified

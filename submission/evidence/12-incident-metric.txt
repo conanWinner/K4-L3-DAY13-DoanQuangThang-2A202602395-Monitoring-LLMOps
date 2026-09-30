@@ -1,0 +1,10 @@
+Challenge ID: day13-k4-l3b-monitoring-llmops-v1
+Seed: 1312
+Incident interval: 2026-09-30 04:22:07–04:22:21 UTC
+Metric | Baseline | Incident
+Số request | 5 | 5
+App latency P95 | 1,132 ms | 2,652 ms
+Client latency P95 | 1,843.8 ms | 13,291.2 ms
+Retrieval trung bình (trace) | 0 ms | 2,501 ms
+App latency > 2,000 ms | 0/5 | 5/5
+HTTP error / retrieval fail | 0 / 0 | 0 / 0

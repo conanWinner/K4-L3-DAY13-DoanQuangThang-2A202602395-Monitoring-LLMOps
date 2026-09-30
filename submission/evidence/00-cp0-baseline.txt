@@ -1,0 +1,17 @@
+CP0 baseline trước khi tạo log mới cho CP1 (2026-09-30)
+
+python scripts/validate_logs.py
+Total log records analyzed: 107
+Records with missing required fields: 100
+Records with missing enrichment (context): 100
+Unique correlation IDs found: 0
+Potential PII leaks detected: 0
+Estimated Score: 30/100
+
+python scripts/validate_dashboard.py
+HỢP LỆ: 6/6 panel có trong dashboard contract.
+
+python -m pytest -q (chạy bằng .venv trước CP1)
+22 passed
+
+Log gốc được giữ nguyên trong data/logs.cp0-baseline-20260930T032907Z.jsonl (không commit).
