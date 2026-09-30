@@ -31,8 +31,8 @@
 | Log validator cuối CP4 | `evidence/02-log-validator-cp4.txt` |
 | Dashboard validator cuối CP4 | `evidence/03-dashboard-validator-cp4.txt` |
 | Rà tệp nộp, secret và PII | `evidence/16-prepush-audit.txt` |
-| Trace list | `evidence/06-trace-list.png` (`.txt` cùng tên) |
-| Trace waterfall | `evidence/07-trace-waterfall.png` (`.txt` cùng tên) |
+| Trace list | `evidence/06-trace-list.png` |
+| Trace waterfall | `evidence/07-trace-waterfall.png` |
 | Trace metadata | `evidence/08-trace-metadata.png` (`.txt` cùng tên) |
 | Prompt versions | `evidence/09-prompt-versions.png` (`.txt` cùng tên) |
 | Prompt rollback | `evidence/10-prompt-rollback.png` (`.txt` cùng tên) |
@@ -42,7 +42,7 @@
 | Incident trace | `evidence/14-incident-trace.png`, `evidence/14-incident-trace.txt` |
 | Kiểm tra sau khôi phục | `evidence/15-incident-recovery.txt` |
 
-Các ảnh `06`–`10` được kết xuất từ dữ liệu thật trả về bởi Langfuse Public API v2 và Prompt Management API của project cá nhân; chúng không phải ảnh chụp giao diện Langfuse. File `.txt` cùng tên giữ các giá trị để đối chiếu. Ảnh `11` là ảnh chụp trang `/dashboard` đang chạy.
+Ảnh `06` là ảnh chụp giao diện Tracing trong project Langfuse cá nhân. Các ảnh `07`–`10` được kết xuất từ dữ liệu thật trả về bởi Langfuse Public API v2 và Prompt Management API; chúng không phải ảnh chụp giao diện Langfuse. Các file `.txt` hiện có giữ giá trị để đối chiếu. Ảnh `11` là ảnh chụp trang `/dashboard` đang chạy.
 Ảnh `12-incident-metric.png`, `13-incident-log-public.png` và `14-incident-trace.png` là bản kết xuất từ log ứng dụng, đầu ra `load_test.py` và Langfuse Observations API v2. `12-incident-metric.png` lọc đúng 10 request của challenge để tránh cộng lẫn workload CP1–CP2 trong dashboard 60 phút; ảnh này không phải ảnh chụp trực tiếp dashboard. `13-incident-log-public.png` chỉ trích các trường log cần thiết, không công bố session ID/preview của challenge. Script tái tạo bằng chứng: `scripts/export_cp3_evidence.py` (xuất vào thư mục trống bằng `--output-dir`).
 Ảnh `04-structured-log-screen.png`, `05-pii-redaction-screen.png` và `13-incident-log-screen.png` là ảnh chụp bằng trình duyệt khi mở các bản trích log `.txt` tương ứng; `05-pii-redaction-jsonl-screen.png` chụp trực tiếp nội dung `data/logs.jsonl` đã scrub PII. `12-incident-dashboard-screen.png` chụp trang `/dashboard` đang chạy trong cửa sổ 60 phút có sự cố; phép tính riêng cho đúng 5 request sự cố vẫn ở `12-incident-metric.png`.
 
@@ -53,7 +53,7 @@ Các ảnh `06`–`10` được kết xuất từ dữ liệu thật trả về 
 | `validate_logs.py` | 30/100 trên 107 dòng log cũ | 100/100 trên 121 dòng log CP4 | 55 correlation ID duy nhất; 0 PII leak; `evidence/02-log-validator-cp4.txt` |
 | `validate_dashboard.py` | 6/6 panel | 6/6 panel | `evidence/03-dashboard-validator-cp4.txt`; dashboard runtime tại `evidence/11-dashboard-overview.png` |
 | `pytest` | 22 passed | 26 passed | Chạy bằng `.venv/bin/python`; `evidence/01-pytest-cp4.txt` |
-| Số traces hợp lệ | Chỉ có root observation | 22 trace hoàn chỉnh tại CP2; thêm 10 trace đối chứng/sự cố được kiểm tra tại CP3 | 10 trace ID CP2 trong `evidence/06-trace-list.txt`; một trace CP3 trong `evidence/14-incident-trace.txt` |
+| Số traces hợp lệ | Chỉ có root observation | 22 trace hoàn chỉnh tại CP2; thêm 10 trace đối chứng/sự cố được kiểm tra tại CP3 | 10 trace ID CP2 liệt kê ở mục 5; danh sách Langfuse trong `evidence/06-trace-list.png`; một trace CP3 trong `evidence/14-incident-trace.txt` |
 | Số PII leak | 0 | 0 | Validator kiểm tra email, điện thoại, CCCD, thẻ |
 | Latency P95 / TTFT P95 | 1038 / 50 ms trên 21 request baseline CP2 | 3696 / 50 ms trong ảnh dashboard CP2 | P99 18577 ms; tail latency tăng ở một số request |
 | Retrieval success rate | 100% trên 21 request baseline CP2 | 100% trên 38 request trong ảnh dashboard | Panel Errors hiển thị tỷ lệ này cùng error rate |
