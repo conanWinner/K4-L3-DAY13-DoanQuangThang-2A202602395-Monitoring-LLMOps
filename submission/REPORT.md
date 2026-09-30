@@ -22,8 +22,8 @@
 | Pytest CP1 | `evidence/01-pytest.txt` |
 | Log validator CP1 | `evidence/02-log-validator.txt` |
 | Dashboard validator CP1 | `evidence/03-dashboard-validator.txt` |
-| Structured log CP1 | `evidence/04-structured-log.txt` |
-| PII redaction CP1 | `evidence/05-pii-redaction.txt` |
+| Structured log CP1 | `evidence/04-structured-log.txt`, `evidence/04-structured-log-screen.png` |
+| PII redaction CP1 | `evidence/05-pii-redaction.txt`, `evidence/05-pii-redaction-screen.png`, `evidence/05-pii-redaction-jsonl-screen.png` |
 | Pytest CP2 | `evidence/01-pytest-cp2.txt` |
 | Log validator CP2 | `evidence/02-log-validator-cp2.txt` |
 | Dashboard validator CP2 | `evidence/03-dashboard-validator-cp2.txt` |
@@ -37,13 +37,14 @@
 | Prompt versions | `evidence/09-prompt-versions.png` (`.txt` cùng tên) |
 | Prompt rollback | `evidence/10-prompt-rollback.png` (`.txt` cùng tên) |
 | Dashboard runtime | `evidence/11-dashboard-overview.png` |
-| Incident metric và workload | `evidence/12-incident-metric.png`, `evidence/12-incident-metric.txt`, `evidence/12-incident-run.txt` |
-| Incident log | `evidence/13-incident-log-public.png`, `evidence/13-incident-log-public.txt` |
+| Incident metric và workload | `evidence/12-incident-metric.png`, `evidence/12-incident-dashboard-screen.png`, `evidence/12-incident-metric.txt`, `evidence/12-incident-run.txt` |
+| Incident log | `evidence/13-incident-log-public.png`, `evidence/13-incident-log-screen.png`, `evidence/13-incident-log-public.txt` |
 | Incident trace | `evidence/14-incident-trace.png`, `evidence/14-incident-trace.txt` |
 | Kiểm tra sau khôi phục | `evidence/15-incident-recovery.txt` |
 
 Các ảnh `06`–`10` được kết xuất từ dữ liệu thật trả về bởi Langfuse Public API v2 và Prompt Management API của project cá nhân; chúng không phải ảnh chụp giao diện Langfuse. File `.txt` cùng tên giữ các giá trị để đối chiếu. Ảnh `11` là ảnh chụp trang `/dashboard` đang chạy.
-Ảnh `12`–`14` cũng là bản kết xuất từ log ứng dụng, đầu ra `load_test.py` và Langfuse Observations API v2. `12` lọc đúng 10 request của challenge để tránh cộng lẫn workload CP1–CP2 trong dashboard 60 phút; ảnh không phải ảnh chụp trực tiếp dashboard hay giao diện Langfuse. `13` chỉ trích các trường log cần thiết, không công bố session ID/preview của challenge. Script tái tạo bằng chứng: `scripts/export_cp3_evidence.py` (xuất vào thư mục trống bằng `--output-dir`).
+Ảnh `12-incident-metric.png`, `13-incident-log-public.png` và `14-incident-trace.png` là bản kết xuất từ log ứng dụng, đầu ra `load_test.py` và Langfuse Observations API v2. `12-incident-metric.png` lọc đúng 10 request của challenge để tránh cộng lẫn workload CP1–CP2 trong dashboard 60 phút; ảnh này không phải ảnh chụp trực tiếp dashboard. `13-incident-log-public.png` chỉ trích các trường log cần thiết, không công bố session ID/preview của challenge. Script tái tạo bằng chứng: `scripts/export_cp3_evidence.py` (xuất vào thư mục trống bằng `--output-dir`).
+Ảnh `04-structured-log-screen.png`, `05-pii-redaction-screen.png` và `13-incident-log-screen.png` là ảnh chụp bằng trình duyệt khi mở các bản trích log `.txt` tương ứng; `05-pii-redaction-jsonl-screen.png` chụp trực tiếp nội dung `data/logs.jsonl` đã scrub PII. `12-incident-dashboard-screen.png` chụp trang `/dashboard` đang chạy trong cửa sổ 60 phút có sự cố; phép tính riêng cho đúng 5 request sự cố vẫn ở `12-incident-metric.png`.
 
 ## 3. Kết quả kỹ thuật
 
